@@ -14,6 +14,7 @@ export default {
 <style scoped>
 .title {
   color: #35495e;
+  font-size: 2rem;
 }
 
 @media only screen and (min-width: 1024px) {
