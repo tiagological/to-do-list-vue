@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <span>Add something new:</span>
     <form v-on:submit="addToDo">
       <input
         placeholder="Type something..."
@@ -53,11 +52,7 @@ export default {
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
-}
-
-span {
-  font-size: 1.5rem;
-  color: #42b983;
+  padding: 0 1rem;
 }
 
 form {
@@ -73,16 +68,16 @@ form {
   height: 4rem;
   padding: 1rem;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   border-radius: 5px;
-  border: 1px solid #35495e;
-  color: gray;
+  border: none;
+  color: #2f2fa2;
 }
 
 .input-text-field:focus {
   outline: none;
   border-radius: 5px;
-  border: 2px solid skyblue;
+  border: 2px solid #2f2fa2;
 }
 
 .add-btn {
@@ -90,7 +85,7 @@ form {
   border-style: none;
   border-radius: 50%;
   background-color: transparent;
-  color: #008000;
+  color: #2f2fa2;
   height: 3rem;
   width: 3rem;
   transition: all 200ms;
@@ -98,18 +93,11 @@ form {
 
 .add-btn:hover {
   cursor: pointer;
-  background-color: #c7ffc7;
+  background-color: #fff;
 }
 
 .add-icon {
   height: 2rem;
   width: auto;
-}
-
-@media only screen and (min-width: 768px) {
-  .input-text-field {
-    margin: 2rem;
-    width: 40%;
-  }
 }
 </style>
