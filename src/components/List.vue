@@ -1,6 +1,6 @@
 <template>
   <div class="list-container">
-    <transition-group name="list" tag="p">
+    <transition-group name="list" tag="div" class="transition-wrapper">
       <Item
         v-for="item in list"
         v-bind:key="item.id"
@@ -27,19 +27,35 @@ export default {
 </script>
 
 <style scoped>
-div {
-  list-style-type: none;
-  text-align: center;
+.list-container {
+  text-align: left;
   width: 100%;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.transition-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .list-enter-active,
 .list-leave-active {
-  transition: all 400ms;
+  transition: all 500ms;
 }
-.list-enter,
-.list-leave-to {
-  opacity: 0;
-  transform: translateX(100px);
+
+.list-leave-active {
+  position: absolute;
+  width: 100%;
+}
+
+.list-move {
+  transition: transform 500ms;
 }
 </style>
