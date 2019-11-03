@@ -13,8 +13,12 @@ export default {
 
 <style scoped>
 .title {
-  color: #35495e;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  margin-top: 2rem;
   font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 @media only screen and (min-width: 1024px) {
