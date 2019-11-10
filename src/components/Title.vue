@@ -14,9 +14,8 @@ export default {
 <style scoped>
 .title {
   color: #fff;
-  text-shadow: 0 0 3px #000;
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: center;
 }
