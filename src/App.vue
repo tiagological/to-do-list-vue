@@ -1,28 +1,31 @@
 <template>
   <div id="app">
     <header>
-      <Title title="To Do List" />
-      <AddToDo v-on:add-todo="addToDo" />
+      <Title title="Task List" />
+      <Form v-on:add-todo="addToDo" />
     </header>
     <List :list="list" v-on:delete-todo="deleteTodo" />
     <transition name="fade">
       <h2 v-if="list.length === 0" class="placeholder">Add something to your list</h2>
     </transition>
+    <Footer />
   </div>
 </template>
 
 
 <script>
 import Title from "./components/Title";
-import AddToDo from "./components/AddToDo";
+import Form from "./components/Form";
 import List from "./components/List";
+import Footer from "./components/Footer";
 
 export default {
   name: "app",
   components: {
     Title,
-    AddToDo,
-    List
+    Form,
+    List,
+    Footer
   },
   data() {
     return {
@@ -34,7 +37,7 @@ export default {
     this.list = storedList || [];
   },
   methods: {
-    deleteTodo: function(id) {
+    deleteTodo(id) {
       this.list = this.list.filter(item => item.id !== id);
       localStorage.setItem("list", JSON.stringify(this.list));
     },
