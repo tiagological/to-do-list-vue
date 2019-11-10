@@ -6,7 +6,6 @@
         v-bind:key="item.id"
         v-bind:item="item"
         v-on:delete-todo="$emit('delete-todo', item.id)"
-        class="list-item"
       />
     </transition-group>
   </div>
@@ -37,6 +36,9 @@ export default {
 .transition-wrapper {
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .list-enter,
@@ -53,6 +55,12 @@ export default {
 .list-leave-active {
   position: absolute;
   width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .list-leave-active {
+    width: 90%;
+  }
 }
 
 .list-move {
