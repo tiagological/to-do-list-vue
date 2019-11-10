@@ -7,6 +7,7 @@
         name="todo"
         v-model="text"
         class="input-text-field"
+        ref="input"
       />
       <button type="submit" class="add-btn">
         <font-awesome-icon icon="plus" class="add-icon" />
@@ -18,7 +19,7 @@
 <script>
 import uuid from "uuid";
 export default {
-  name: "AddToDo",
+  name: "Form",
   data() {
     return {
       text: ""
@@ -27,6 +28,7 @@ export default {
   methods: {
     addToDo(e) {
       e.preventDefault();
+      this.$refs.input.blur();
       if (this.text.length === 0) {
         return;
       }
@@ -60,6 +62,12 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  form {
+    width: 40%;
+  }
 }
 
 .input-text-field {
